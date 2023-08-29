@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phones Search</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-4xl font-bold text-blue-500 text-center mt-12 mb-8">Welcome to Mobile Expert BD</h1>
+    </header>
+    <main>
+        <!-- search section -->
+        <section>
+            <div class="sm:mx-auto flex lg:m-4 lg:p-4  bg-gray-100">
+                <input id="search-field" "type=" text" placeholder="search here"
+                    class="input input-bordered w-full max-w-xs" />
+                <button onclick="searchPhone()" class="btn btn-secondary ml-4">Search</button>
+            </div>
+        </section>
+        <!-- Card section -->
+        <section class="container mx-auto">
+            <!-- loading spinner -->
+            <div id="loading-spinner" class="text-center hidden">
+                <span class="loading text-primary loading-spinner loading-lg"></span>
+            </div>
+            <div id="phone-container" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-8">
+
+            </div>
+        </section>
+        <!-- Show details Modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="show_modal_details.showModal()">open modal</button> -->
+        <dialog id="show_modal_details" class="modal modal-bottom sm:modal-middle">
+            <form method="dialog" class="modal-box">
+                <div id="show-detail-info" class=" pl-6">
+
+                </div>
+                
+                    <!-- if there is a button in form, it will close the modal -->
+                    <div class="flex justify-center">
+                        <button class="btn px-8 btn-secondary">Close</button>
+
+                    </div>
+                </div>
+            </form>
+        </dialog>
+
+        <div class="text-center my-8">
+            <button onclick="handleShowAll(true);" id="show-all-btn" class="btn btn-accent hidden">Show All</button>
+        </div>
+    </main>
+    <script src="js/phones.js"></script>
+</body>
+
+</html>
